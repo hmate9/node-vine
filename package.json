@@ -12,10 +12,18 @@
     "url": "https://github.com/mstuart/node-vine.git"
   },
   "dependencies": {
-    "request": "*"  
+    "request": "*",
+    "mocha": "~1.13.0"
   },
   "engines": {
     "node": ">= v0.4.0"
   },
-  "main": "lib/vine.js"
+  "main": "lib/vine.js",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "licenses": [{
+    "type": "The MIT License",
+    "url": "http://www.opensource.org/licenses/mit-license.php"
+  }]
 }
