@@ -40,7 +40,7 @@
 
 ## Notes
 
-  Inspired by [vino], a python app that displays a wall of popular Vines.(https://github.com/starlock/vino).
+  Inspired by [vino](https://github.com/starlock/vino), a python app that displays a wall of popular Vines..
 
 ## License
 
