@@ -20,7 +20,7 @@
   },
   "main": "lib/vine.js",
   "scripts": {
-    "test": "mocha test.js"
+    "test": "mocha ./test/test.js"
   },
   "licenses": [{
     "type": "The MIT License",

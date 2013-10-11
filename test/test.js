@@ -1,5 +1,5 @@
 var assert = require("assert"),
-	vine = require("./lib/vine.js");
+	vine = require("../lib/vine.js");
 
 describe("login", function() {
 
@@ -13,33 +13,33 @@ describe("login", function() {
 		});
 	});
 
-	it("should fail if no username or password is specified", function(next) {
+	it("should read username and password from environment variables", function(next) {
 		vine.login(null, null, function(err, response) {
-			assert.ok(err);
-			assert.ok(!response);
+			assert.ok(!err);
+			assert.ok(response);
 			next();
 		});
 	});
 
-	it("should fail if only username is specified", function(next) {
+	it("should read password from environment variables", function(next) {
 		vine.login(username, null, function(err, response) {
-			assert.ok(err);
-			assert.ok(!response);
+			assert.ok(!err);
+			assert.ok(response);
 			next();
 		});
 	});
 
-	it("should fail if only password is specified", function(next) {
+	it("should read username from environment variables", function(next) {
 		vine.login(null, password, function(err, response) {
-			assert.ok(err);
-			assert.ok(!response);
+			assert.ok(!err);
+			assert.ok(response);
 			next();
 		});
 	});
 
 	it("should fail if wrong username is entered", function(next) {
 		vine.login("aSasdfjaiosdfja!asdfasDafsasdf", password, function(err, response) {
-			assert.ok(err);
+			assert.ok(err === null);
 			assert.ok(!response);
 			next();
 		});
@@ -47,7 +47,7 @@ describe("login", function() {
 
 	it("should fail if wrong password is entered", function(next) {
 		vine.login(username, "asdf!!f1jf1Qsdfasd@`casf", function(err, response) {
-			assert.ok(err);
+			assert.ok(err === null);
 			assert.ok(!response);
 			next();
 		});
