@@ -13,34 +13,75 @@
 ### .login(username, password[, callback(err, response)])
 
   Only supports e-mail address authentication. Twitter OAuth authentication to come later.
-
+  
+```js
+vine.login("testuser@test.com", "p@ssw0rd", function(err, response) {
+  // Logged in!  Now you can use any other authenticated API... Like fetching your timeline or the most popular videos.
+});
+```
 ### .timeline([ callback(err, response)])
 
   Returns a user's timeline
+  
+```js
+vine.timeline(function(err, response) {
+  // response contains a list of Vines in your timeline
+});
+```
 
 ### .popular([ callback(err, response)])
 
   Returns a list of the most popular Vines
 
+```js
+vine.popular(function(err, response) {
+  // response contains a list the most popular Vines
+});
+```
+
 ### .promoted([ callback(err, response)])
 
   Returns a list of promoted Vines
+  
+```js
+vine.promoted(function(err, response) {
+  // response contains a list of promoted Vines
+});
+```
 
 ### .tags(query[, callback(err, response)])
 
   Performs a search for Vines with an associated tag
+  
+```js
+vine.tags("lolcats", function(err, response) {
+  // response contains a list of lolcats Vines
+});
+```
 
 ### .search(query[, callback(err, response)])
 
   Performs a search for Vine users
+  
+```js
+vine.search("dave", function(err, response) {
+  // response contains a list of Vine users matching "dave"
+});
+```
 
 ### .settings([ callback(err, response)])
 
   Returns a user's settings
+  
+```js
+vine.settings(function(err, response) {
+  // response contains a user's Vine account settings
+});
+```
 
 ## Notes
 
-  Inspired by [vino](https://github.com/starlock/vino), a python app that displays a wall of popular Vines..
+  Inspired by [vino](https://github.com/starlock/vino), a python app that displays a wall of popular Vines.
 
 ## License
 
