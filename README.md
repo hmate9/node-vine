@@ -6,6 +6,12 @@
 
   The Vine API is undocumented and not publicly available.  However, it has a lot of great content.  I noticed that there are a few python wrappers, so I wanted to create a node.js one.  I also plan to do a few mobile web experiments with the Vine API, so this will come in handy for my next project.  Have fun!
 
+## Install
+
+```
+npm install node-vine
+```
+  
 ## API
 
   All of Vine's API calls are authenticated, so you'll need to login first.  You can add VINE_USERNAME and VINE_PASSWORD to your environment variables to hide them from being passed in the clear.
