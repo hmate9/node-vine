@@ -1,9 +1,7 @@
 # node-vine
 
   Vine API for node.js
-
 [![Analytics](https://ga-beacon.appspot.com/UA-46813537-1/node-vine?pixel)](https://github.com/mstuart/node-vine)
-
 ## About
 
   The Vine API is undocumented and not publicly available.  However, it has a lot of great content.  I noticed that there are a few python wrappers, so I wanted to create a node.js one.  I also plan to do a few mobile web experiments with the Vine API, so this will come in handy for my next project.  Have fun!
