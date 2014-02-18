@@ -1,5 +1,8 @@
 # node-vine
 
+[![Dependencies Status](https://david-dm.org/mstuart/node-vine.png)](https://david-dm.org/mstuart/node-vine)
+[![DevDependencies Status](https://david-dm.org/mstuart/node-vine/dev-status.png)](https://david-dm.org/mstuart/node-vine#info=devDependencies)
+
   Vine API for node.js
 [![Analytics](https://ga-beacon.appspot.com/UA-46813537-1/node-vine?pixel)](https://github.com/mstuart/node-vine)
 ## About
