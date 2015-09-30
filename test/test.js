@@ -1,23 +1,26 @@
 "use strict";
 
 var assert = require("assert"),
-	vine = require("../lib/vine.js");
+vine = require("../lib/vine.js");
 
 describe("login", function () {
 
 	var username = process.env.VINE_USERNAME,
-		password = process.env.VINE_PASSWORD;
+	password = process.env.VINE_PASSWORD;
+
+	var user = new vine.VineUser(username, password);
 
 	it("should login via POST /users/authenticate", function (next) {
-		vine.login(username, password, function (err, response) {
+		user.login(function (err, response) {
 			assert.ok(!err);
-            assert.ok(response.key);
+			assert.ok(response.key);
 			next();
 		});
 	});
 
 	it("should read username and password from environment variables", function (next) {
-		vine.login(null, null, function (err, response) {
+		var user = new vine.VineUser(null, null);
+		user.login(function (err, response) {
 			assert.ok(!err);
 			assert.ok(response.key);
 			next();
@@ -25,7 +28,8 @@ describe("login", function () {
 	});
 
 	it("should read password from environment variables", function (next) {
-		vine.login(username, null, function (err, response) {
+		var user = new vine.VineUser(username, null);
+		user.login(function (err, response) {
 			assert.ok(!err);
 			assert.ok(response);
 			next();
@@ -33,7 +37,8 @@ describe("login", function () {
 	});
 
 	it("should read username from environment variables", function (next) {
-		vine.login(null, password, function (err, response) {
+		var user = new vine.VineUser(null, password);
+		user.login(function (err, response) {
 			assert.ok(!err);
 			assert.ok(response);
 			next();
@@ -41,7 +46,8 @@ describe("login", function () {
 	});
 
 	it("should fail if wrong username is entered", function (next) {
-		vine.login("aSasdfjaiosdfja!asdfasDafsasdf", password, function (err, response) {
+		var user = new vine.VineUser("asdfasDafsasdf", password);
+		user.login(function (err, response) {
 			assert.ok(err.message === "Username/password are incorrect.");
 			assert.ok(!response);
 			next();
@@ -49,8 +55,9 @@ describe("login", function () {
 	});
 
 	it("should fail if wrong password is entered", function (next) {
-		vine.login(username, "asdf!!f1jf1Qsdfasd@`casf", function (err, response) {
-            assert.ok(err.message === "Username/password are incorrect.");
+		var user = new vine.VineUser(username, "adasdasdsa");
+		user.login(function (err, response) {
+			assert.ok(err.message === "Username/password are incorrect.");
 			assert.ok(!response);
 			next();
 		});
